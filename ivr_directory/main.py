@@ -10,30 +10,19 @@ import openLoopControl as olc
 
 print ('Welcome to ev3')
 
-#ev3.Sound.speak('Welcome to e v 3').wait()
+ev3.Sound.speak('Welcome to e v 3').wait()
 
-#g = ev3.GyroSensor()
-#while True:
-#    #print g.value()
+# Step A: Basic open driving
+tutorial.operateWheelsBasic()
 
-m = ev3.LargeMotor('outA')
-m.connected
-m.run_timed(time_sp=3000, duty_cycle_sp=75)
-m.position()
-
-#gs.mode = 'GYRO-ANG'
-
-# Step a Basic open driving
-#tutorial.operateWheelsBasic()
-
-# Step b Turn on an off an LED using a switch
+# Step B: Turn on an off an LED using a switch
 #tutorial.makeLightSwitch()
 
-# Step c Use switches to drive robot back and forward
+# Step C: Use switches to drive robot back and forward
 #tutorial.makeLightAndMotorSwitch()
 
 
-# Step d Use a class to develop a bigger program with a state
+# Step D: Use a class to develop a bigger program with a state
 #o = olc.openLoopControl()
 ## execute (with default params)
 #o.operateWheels()
