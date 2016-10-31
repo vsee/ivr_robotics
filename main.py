@@ -34,6 +34,8 @@ tutorial.operateWheelsBasic()
 ## execute again
 #o.operateWheels()
 
+# Step E: Record values from the ultrasonic to a text file
+# tutorial.recordUltraSonic()
 
 # remove this if you want it to exit as soon as its done:
 print "wait 10sec, then end"

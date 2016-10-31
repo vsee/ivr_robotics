@@ -64,3 +64,21 @@ def makeLightAndMotorSwitch():
 
     print ("turning off light, done")
     ev3.Leds.set_color(ev3.Leds.LEFT, (ev3.Leds.GREEN, ev3.Leds.RED)[0])
+
+def recordUltraSonic():
+    print("Record readings from ultrasonic")
+    print("Will print after back button is pressed")
+
+    btn = ev3.Button()
+
+    sonar = ev3.UltrasonicSensor(ev3.INPUT_1)
+    sonar.connected
+    sonar.mode = 'US-DIST-CM' # will return value in mm
+
+    readings = ""
+    readings_file = open('results.txt', 'w')
+
+    while not btn.backspace:
+        readings = readings + str(sonar.value()) + '\n'
+    readings_file.write(readings)
+    readings_file.close() # Will write to a text file in a column
