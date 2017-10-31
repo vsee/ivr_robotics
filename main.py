@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 # Core imports
 import time
 import ev3dev.ev3 as ev3
@@ -10,7 +10,7 @@ import openLoopControl as olc
 
 print ('Welcome to ev3')
 
-ev3.Sound.speak('Welcome to e v 3').wait()
+#ev3.Sound.speak('Welcome to e v 3').wait()
 
 # Step A: Basic open driving
 tutorial.operateWheelsBasic()
@@ -29,7 +29,7 @@ tutorial.operateWheelsBasic()
 #
 ## update parameters
 #o.time_to_spin = 1.0
-#o.duty_cycle_sp = 50
+#o.speed_sp = 720
 #
 ## execute again
 #o.operateWheels()
@@ -38,5 +38,5 @@ tutorial.operateWheelsBasic()
 # tutorial.recordUltraSonic()
 
 # remove this if you want it to exit as soon as its done:
-print "wait 10sec, then end"
+print("wait 10sec, then end")
 time.sleep(10)

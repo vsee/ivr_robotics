@@ -6,15 +6,15 @@ import utilities as util
 
 
 def operateWheelsBasic():
-    print "spin the wheels"
+    print("spin the wheels")
 
     motor =ev3.LargeMotor('outA')
     motor.connected
 
     # run_time takes milliseconds
-    motor.run_timed(duty_cycle_sp=25, time_sp=500)
+    motor.run_timed(speed_sp=720, time_sp=500)
     time.sleep(1)
-    motor.run_timed(duty_cycle_sp=-25, time_sp=500)
+    motor.run_timed(speed_sp=-720, time_sp=500)
 
     print('sleeping for 1 second')
     time.sleep(1)
@@ -53,9 +53,9 @@ def makeLightAndMotorSwitch():
         ev3.Leds.set_color(ev3.Leds.RIGHT, (ev3.Leds.GREEN, ev3.Leds.RED)[ts2.value()])
 
         if (ts.value()):
-            motor.run_timed(duty_cycle_sp=100, time_sp=50)
+            motor.run_timed(speed_sp=720, time_sp=50)
         elif (ts2.value()):
-            motor.run_timed(duty_cycle_sp=-100, time_sp=50)
+            motor.run_timed(speed_sp=-720, time_sp=50)
 
         t_now = util.timestamp_now()
         if (t_now - t_start > 30E3):
